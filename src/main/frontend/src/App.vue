@@ -45,9 +45,11 @@
             register(user) {
                 this.$http.post('participants', user)
                     .then(response => {
-                        // udało się
+                        alert("Udało sie!");
                     })
-                    .catch(response => "nie udało się");
+                    .catch(response => {
+                        alert("Nie udało sie! Status: " + response.status)
+                    });
             },
             logout() {
                 this.authenticatedUsername = '';
